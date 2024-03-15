@@ -1,0 +1,69 @@
+﻿@model DetallesZapatilla
+
+
+<h1>ZAPAS</h1>
+
+<ul class="list-group">
+    <li class="list-group-item list-group-item-danger">
+        Id Departamento: @Model.Zapatilla.Nombre
+    </li>
+    <li class="list-group-item list-group-item-info">
+        Nombre: @Model.Zapatilla.IdProducto
+    </li>
+    <li class="list-group-item list-group-item-info">
+        Localidad: @Model.Zapatilla.Precio
+    </li>
+</ul>
+
+<h2 style="color:blue">
+    Registro @ViewData["POSICION"] de @ViewData["REGISTROS"]
+</h2>
+<div id="contenidoEmpleados" style="background-color: lightgreen"></div>
+
+
+
+ <div>
+    <ul class="list-group list-group-horizontal">
+        <li class="list-group-item">
+            <a asp-controller="Paginacion"
+               asp-action="EmpleadosDepartamentoOut"
+               asp-route-posicion="1"
+               asp-route-iddepartamento="@ViewData["DEPARTAMENTO"]">
+                Primero
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a asp-controller="Paginacion"
+               asp-action="EmpleadosDepartamentoOut"
+               asp-route-posicion="@ViewData["ANTERIOR"]"
+               asp-route-iddepartamento="@ViewData["DEPARTAMENTO"]">
+                Anterior
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a asp-controller="Paginacion"
+               asp-action="EmpleadosDepartamentoOut"
+               asp-route-posicion="@ViewData["SIGUIENTE"]"
+               asp-route-iddepartamento="@ViewData["DEPARTAMENTO"]">
+                Siguiente
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a asp-controller="Paginacion"
+               asp-action="EmpleadosDepartamentoOut"
+               asp-route-posicion="@ViewData["ULTIMO"]"
+               asp-route-iddepartamento="@ViewData["DEPARTAMENTO"]">
+                Ultimo
+            </a>
+        </li>
+    </ul>
+</div>
+<hr />
+<ul class="list-group">
+    <li class="list-group-item list-group-item-info">
+        Id Empleado: @Model.Imagenes
+    </li>
+
+</ul> 
+
+
